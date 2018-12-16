@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 
 //import of custom components
+import Select from './Select';
 
 class SingleProduct extends Component {
 
@@ -10,20 +11,14 @@ class SingleProduct extends Component {
     let {name, price, weight} = this.props.product;
 
     return (
-        <div className="card-item">
         <div className="single-product">
-          <div className="product-name">{name}</div>
-          <div className="product-price">{price}</div>
-          <div className="product-weight">{weight}</div>
-          <div className="product-select">
-            <input type="checkbox" 
-            name="" 
-            value=""
-            onChange={()=>{this.props.onSelectedItems(this.props.product)}}
-            />
+          <div className="label-product">{name}</div>
+          <div className="label-product">{price}</div>
+          <div className="label-product">{weight}</div>
+          <div className="label-product">
+            <Select onSelectedItems={this.props.onSelectedItems} product={this.props.product}/>
           </div>
         </div>
-      </div>
     );
   }
 }

@@ -66,11 +66,21 @@ class App extends Component {
     };
   }
 
-  onSelectedItems = item => {
+  onSelectedItems = (item, value) => {
     let selectedItemArray = this.state.selectedItems;
-    this.setState({
-      selectedItems: [...selectedItemArray, item]
-    });
+    if(value){
+      selectedItemArray = this.state.selectedItems.filter((i)=>{
+        return i.name !== item.name
+      });
+      this.setState({
+        selectedItems: selectedItemArray
+      });
+    }else{
+      this.setState({
+        selectedItems: [...selectedItemArray, item]
+      });
+    }
+   
   };
 
   render() {

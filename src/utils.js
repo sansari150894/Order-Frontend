@@ -56,11 +56,14 @@ const createPackage = selectedItems => {
       let item = selectedItems.map((item)=>{
         return item.name+", "
       })
-      pacakages.push({
-        item: item,
-        totalWeight: totalWeight,
-        totalPrice: totalPrice
-      });
+      if(totalWeight && totalPrice && item.length){
+        pacakages.push({
+            name: item,
+            weight: totalWeight,
+            price: totalPrice
+          });
+      }
+      
     }
     return pacakages;
   };

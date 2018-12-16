@@ -10,7 +10,7 @@ class Header extends Component {
         <div className="logo">Orders</div>
         {
           this.props.showCheckout && 
-            <Link to={'/order-detail'}><div className="btn-checkout" onClick={this.props.onCheckout}>Checkout</div></Link>}
+            <Link to={'/order-detail'} style={{textDecoration:'none'}}><div className="btn-checkout" onClick={this.props.onCheckout}>Checkout</div></Link>}
       </div>
     );
   }

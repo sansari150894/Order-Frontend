@@ -9,14 +9,19 @@ import { createPackage } from '../utils.js';
 
 class PackageListing extends Component {
   render() {
+    let packages = createPackage(this.props.selectedItems);
     return (
       <div className="main-container">
         <Header showCheckout={false} />
         <div className="order-container">
+        {
+          packages.length ? <div>
           {
-            createPackage(this.props.selectedItems).map((pacakage, index) => {
+            packages.length && packages.map((pacakage, index) => {
               return <Pacakage pacakage={pacakage} key={index} index={index}/>
           })}
+          </div>: <div style={{marginTop:"20px"}}>Nothing to show</div>
+        }
         </div>
       </div>
     );
