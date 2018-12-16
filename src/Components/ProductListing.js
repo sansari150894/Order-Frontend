@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from "./Header";
 import "../App.css";
 
 //
@@ -9,6 +10,7 @@ class ProductListing extends Component {
   render() {
     return (
       <div className="main-container">
+        <Header showCheckout={true}/>
         <ProductListingHeader/>
         {
             this.props.products.map((product, index)=>{
