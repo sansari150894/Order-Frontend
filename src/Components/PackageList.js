@@ -4,9 +4,6 @@ import Pacakage from './Package';
 import "../App.css";
 import { createPackage } from '../utils.js';
 
-
-
-
 class PackageListing extends Component {
   render() {
     let packages = createPackage(this.props.selectedItems);
